@@ -40,3 +40,8 @@
 .read-the-docs {
   color: #888;
 }
+.answers{
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
