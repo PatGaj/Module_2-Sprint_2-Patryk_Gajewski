@@ -1,4 +1,3 @@
-import "./Result.css";
 function Result(props) {
   const score = props.score;
   const isPassed = score >= 8 ? "green" : "red";
@@ -8,13 +7,13 @@ function Result(props) {
       <h1 style={{ color: isPassed }}>{score >= 8 ? "Zaliczone" : "Nie Zaliczone"}</h1>
       <h3>
         Twój wynik to:
-        <span style={{ color: isPassed }}> {score * 10}%</span> ({score} z 10 poprawnych odpowiedzi)
+        <span style={{ color: isPassed }}> {(score * 100) / 10}%</span> ({score} z 10 poprawnych odpowiedzi)
       </h3>
       <div className="quizResult">
         {userAnswers.map((answer, index) => (
           <>
             <div className="answerResult">
-              Pytanie: {answer[0]}
+              {answer[0]}
               <div>
                 Twoja odpowiedź:
                 <span style={{ color: answer[2] ? "green" : "red" }} key={index}>

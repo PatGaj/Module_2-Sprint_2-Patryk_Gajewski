@@ -1,4 +1,3 @@
-import "./Question.css";
 function Question(props) {
   const checkAnswer = (...answer) => {
     props.onAnswer(answer);
@@ -6,13 +5,15 @@ function Question(props) {
   const answers = props.answers;
   return (
     <>
-      <p>{props.text}</p>
       <div className="answers">
+        <p>
+          Pytanie {props.counter}: {props.text}
+        </p>
         {answers.map((answer, index) => (
           <button
             id="questionButton"
             key={index}
-            onClick={() => checkAnswer(props.text, answer.text, answer.isCorrect)}
+            onClick={() => checkAnswer(`Pytanie ${props.counter}: ${props.text}`, answer.text, answer.isCorrect)}
           >
             {answer.text}
           </button>

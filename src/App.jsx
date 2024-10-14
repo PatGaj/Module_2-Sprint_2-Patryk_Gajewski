@@ -17,9 +17,9 @@ function App() {
     setQuestion(QUESTIONS[counter]);
     setScore(0);
   };
-  const getUserAnswer = (childAnswer) => {
-    userAnswers.push(childAnswer);
-    if (childAnswer[2]) {
+  const getUserAnswer = (userAnswer) => {
+    userAnswers.push(userAnswer);
+    if (userAnswer[2]) {
       setScore(score + 1);
     }
     if (QUESTIONS.length - 1 > counter) {
@@ -32,7 +32,7 @@ function App() {
   return (
     <>
       {condition === "start" && <Start startQuiz={startQuiz} />}
-      {condition === "quiz" && <Question {...question} onAnswer={getUserAnswer} />}
+      {condition === "quiz" && <Question {...question} onAnswer={getUserAnswer} counter={counter + 1} />}
       {condition === "result" && (
         <Result userAnswers={userAnswers} score={score} startQuiz={() => setCondition("start")} />
       )}
