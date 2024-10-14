@@ -1,6 +1,6 @@
 function Result(props) {
   const score = props.score;
-  const isPassed = score >= 8 ? "green" : "red";
+  const isPassed = score >= 8 ? "#00ff00" : "#ff0000";
   const userAnswers = props.userAnswers;
   return (
     <>
@@ -16,7 +16,7 @@ function Result(props) {
               {answer[0]}
               <div>
                 <span>Twoja odpowiedź: </span>
-                <span style={{ color: answer[2] ? "green" : "red" }} key={index}>
+                <span style={{ color: answer[2] ? "#00ff00" : "#ff0000" }} key={index}>
                   {answer[1]}
                 </span>
               </div>
