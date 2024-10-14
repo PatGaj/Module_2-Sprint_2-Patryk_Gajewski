@@ -4,7 +4,7 @@ function Result(props) {
   const userAnswers = props.userAnswers;
   return (
     <>
-      <h1 style={{ color: isPassed }}>{score >= 8 ? "Zaliczone" : "Nie Zaliczone"}</h1>
+      <h1 style={{ color: isPassed }}>{score >= 8 ? "Gratuluję, Zaliczone" : "Przykro mi, Niezaliczone"}</h1>
       <h3>
         Twój wynik to:
         <span style={{ color: isPassed }}> {(score * 100) / 10}%</span> ({score} z 10 poprawnych odpowiedzi)
@@ -15,7 +15,7 @@ function Result(props) {
             <div className="answerResult">
               {answer[0]}
               <div>
-                Twoja odpowiedź:
+                <span>Twoja odpowiedź: </span>
                 <span style={{ color: answer[2] ? "green" : "red" }} key={index}>
                   {answer[1]}
                 </span>
